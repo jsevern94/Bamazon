@@ -1,0 +1,25 @@
+{
+  "name": "Bamazon",
+  "version": "1.0.0",
+  "description": "Node.js and MYSQL app",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsevern94/Bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsevern94/Bamazon/issues"
+  },
+  "homepage": "https://github.com/jsevern94/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1"
+  }
+}
