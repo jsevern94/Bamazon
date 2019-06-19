@@ -28,7 +28,7 @@ function itemChoices() {
         if (err) throw err;
         for (var i = 0; i < res.length; i++) {
             if (res[i].stock_quantity > 0) {
-                console.log(`${res[i].id} - ${res[i].product_name} is avaible for $${res[i].price}`);
+                console.log(`${res[i].id} - ${res[i].product_name} is available for $${res[i].price}`);
                 itemIDs.push(res[i].id);
             }
         }
@@ -68,16 +68,16 @@ function quantity(itemId, price, stock) {
             name: "user_quantity"
         }
     ]).then(function (answer) {
-        var user_quantity = answer.user_quantity;
-        if (user_quantity > stock) {
+        var userQuantity = answer.user_quantity;
+        if (userQuantity > stock) {
             console.log("Insufficient quantity. Try a lesser amount.");
             quantity(itemId, price, stock);
         }
         else {
-            var totalPrice = price * user_quantity;
+            var totalPrice = price * userQuantity;
             //Makes sure that the price always shows two decimal places
             var dollarPrice = parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
-            var newStock = stock - user_quantity;
+            var newStock = stock - userQuantity;
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
