@@ -188,7 +188,7 @@ function addProduct() {
 
 function createProduct(name, department, price, quantity) {
     console.log("Ordering a new product...\n");
-    var query = connection.query(
+    connection.query(
         "INSERT INTO products SET ?",
         {
             product_name: name,
@@ -200,7 +200,6 @@ function createProduct(name, department, price, quantity) {
             if (err) throw err;
         }
     );
-    query.sql;
     console.log(`${name} added to available products!\n`);
     managerChoices();
 }
